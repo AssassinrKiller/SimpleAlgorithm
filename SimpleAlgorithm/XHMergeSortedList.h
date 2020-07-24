@@ -12,8 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XHMergeSortedList : NSObject
 //有序数组的归并算法
-void mergeList(int a[_Nonnull], int alen, int b[_Nullable], int blen, int result[_Nullable]);
-
++ (NSArray *)mergeListWithListA:(NSArray *)a ListB:(NSArray *)b;
 @end
 
 NS_ASSUME_NONNULL_END
