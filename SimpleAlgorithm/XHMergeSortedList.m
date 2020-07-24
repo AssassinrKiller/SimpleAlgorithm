@@ -11,6 +11,8 @@
 @implementation XHMergeSortedList
 
 void mergeList(int a[], int alen, int b[], int blen, int result[]){
+    
+    //有序数组合并
     int p = 0;
     int q = 0;
     int i = 0;
