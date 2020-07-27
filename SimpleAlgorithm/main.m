@@ -75,33 +75,28 @@ void testPrint(int n) {
 }
 
 /**
- 寻找最长回文字符串  @[@"a",@"b",@"v",@"c",@"c",@"v"]
+ 寻找最长回文字符串  @[@"a",@"b",@"a",@"v",@"c",@"c",@"v",@"b"]
  下面这种是暴力解法,比较笨
  */
 void LongestPalindromicSubstring(NSArray *str){
     int sLen = (int)str.count;
-    int jump = 0,
-         max = 0,
-      begain = 0,
-         end = 0;
-    
+    int max = 0,//保存在大长度回文串
+     begain = 0,//记录回文串的开始坐标
+        end = 0;//记录回文串的结束坐标
     for (int i = 0; i < sLen; i++) {
         for (int j = i+1; j < sLen; j++) {
             if (str[i] == str[j]) {
                 int p = i,q = j;
-                while (str[p] != str[j] && p < q) {
-                    jump = 1;
-                    break;
-                }
-                p++;
-                q--;
-                if (jump == 1) {
-                     break;
-                }
-                if (max < j - i) {
-                    max = j - i;
-                    end = j;
-                    begain = i;
+                while (str[p] == str[q]) {
+                    if (p == q || q-p == 1) {
+                        if (max < j - i) {
+                            max = j - i;
+                            end = j;
+                            begain = i;
+                        }
+                        break;
+                    }
+                    p++;q--;
                 }
             }
         }
