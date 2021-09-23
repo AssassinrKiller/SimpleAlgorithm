@@ -108,11 +108,36 @@ void LongestPalindromicSubstring(NSArray *str){
     NSLog(@"%@",result);
 }
 
+
+NSArray *findSumIndexs(NSArray *arr, NSInteger target) {
+    NSInteger startIndex = -1;
+    NSInteger endIndex = -1;
+    for (NSInteger i = 0; i < arr.count; i++) {
+        NSInteger temp = [arr[i] integerValue];
+        if (temp > target) {
+            continue;
+        }
+        for (NSInteger j = i + 1; j < arr.count; j++) {
+            NSInteger temp1 = [arr[j] integerValue];
+            if (target == temp + temp1) {
+                endIndex = j;
+                startIndex = i;
+                break;
+            }
+        }
+        if (endIndex + startIndex) {
+            return @[@(startIndex),@(endIndex)];
+        }
+    }
+    return nil;
+}
+
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         //杨辉三角打印
-//        [PrintTriangle PrintTriangleWithNum:8];
+//        [PrintTriangle PrintTriangleWithNum:10];
         
         //有序数组合并
 //        NSArray *result = [XHMergeSortedList mergeListWithListA:@[@1,@3,@5] ListB:@[@2,@4,@6,@8]];
@@ -137,7 +162,11 @@ int main(int argc, const char * argv[]) {
 //        }
         
         //abvveaaerf
-        LongestPalindromicSubstring(@[@"a",@"b",@"v",@"c",@"c",@"v",@"b"]);
+//        LongestPalindromicSubstring(@[@"a",@"b",@"v",@"j",@"o",@"c",@"v",@"b"]);
+        NSArray *result = findSumIndexs(@[@(11),@(2),@(3),@(6),@(7),@(1)], 3);
+        
+        NSLog(@"%@",result);
+        
     }
     return 0;
 }
