@@ -164,7 +164,6 @@ int main(int argc, const char * argv[]) {
         //abvveaaerf
 //        LongestPalindromicSubstring(@[@"a",@"b",@"v",@"j",@"o",@"c",@"v",@"b"]);
         NSArray *result = findSumIndexs(@[@(11),@(2),@(3),@(6),@(7),@(1)], 3);
-        
         NSLog(@"%@",result);
         
     }
