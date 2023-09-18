@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "PrintTriangle.h"
 #import "XHMergeSortedList.h"
+#import "XHReverseList.h"
+#import "XHSimpleNode.h"
+#import "XHListReverse.h"
 
 
 
@@ -132,9 +135,134 @@ NSArray *findSumIndexs(NSArray *arr, NSInteger target) {
     return nil;
 }
 
+/**
+ 重拍链表
+ 输入:给定一个单向链表,
+  1 -> 2 -> 3 -> 4 -> 5
+ 
+ 输出:返回一个单向链表
+ 
+ 1 -> 5 -> 2 -> 4 -> 3
+
+ */
+
+XHSimpleNode * creatOCNode(NSInteger lenght) {
+    XHSimpleNode *head = nil;
+    XHSimpleNode *temp = nil;
+    for (NSInteger i = 0; i < lenght; i++) {
+        XHSimpleNode *node = [XHSimpleNode new];
+        node.value = i + 1;
+        temp.next = node;
+        temp = node;
+        if (!head) {
+            head = node;
+        }
+    }
+    return head;
+}
+
+void PrintOCNodes(XHSimpleNode *head) {
+    XHSimpleNode *temp = head;
+    while (temp) {
+        NSLog(@"node:%@",@(temp.value));
+        temp = temp.next;
+    }
+}
+
+XHSimpleNode * reSortedOCNodes(XHSimpleNode *head) {
+    
+    NSMutableArray *list = [NSMutableArray array];
+    XHSimpleNode *temp = head;
+    while (temp) {
+        [list addObject:temp];
+        temp = temp.next;
+    }
+    
+    NSInteger left = 0;
+    NSInteger right = list.count - 1;
+    // 0, 1, 2, 3, 4
+    // 1, 2, 3, 4, 5
+    while (left != right) {
+        XHSimpleNode *l_node = list[left];
+        XHSimpleNode *r_node = list[right];
+        
+        l_node.next = r_node;
+        left++;
+        
+        r_node.next = list[left];
+        right--;
+    }
+    
+    if (left == right) {
+        XHSimpleNode *lastNode = list[left];
+        lastNode.next = nil;
+    }
+    
+    return head;
+}
+
+void char_reverse(char* cha) {
+    char* begin = cha;
+    char* end = cha + strlen(cha) - 1;
+    
+    while (begin < end) {
+        char temp = *begin;
+        *(begin++) = *end;
+        *(end--) = temp;
+    }
+}
+
+/**
+ 利用快排思想解决,无序数组的中位数查询
+ 
+ 3, 5, 1, 2, 7, 9, 4
+ 
+ */
+
+int findMedian(int a[], int alen) {
+    
+    
+    return 0;
+}
+
+/**
+ 跳台阶问题,一次可以跳 1 级, 2 级,求 n 个台阶有多少种跳法
+ 
+  n = 1, sum = 1
+  n = 2, sum = 2
+  n = 3, sum = 3
+  n = 4, sum = 5
+  n = 5, sum = 8
+  n = 6, sum = ?
+ 
+ */
+
+int jumpFloor(int n) {
+    
+    if (n < 3) {
+        return n;
+    }
+    
+    int f1 = 2;
+    int f2 = 1;
+    
+    int sum = 0;
+    for (int i = 3; i <= n; i++) {
+        sum = f1 + f2;
+        f2 = f1;
+        f1 = sum;
+    }
+    return sum;
+}
+
+
+
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
+//        NSLog(@"%d",jumpFloor(6));
+        
         
         //杨辉三角打印
 //        [PrintTriangle PrintTriangleWithNum:10];
@@ -163,8 +291,22 @@ int main(int argc, const char * argv[]) {
         
         //abvveaaerf
 //        LongestPalindromicSubstring(@[@"a",@"b",@"v",@"j",@"o",@"c",@"v",@"b"]);
-        NSArray *result = findSumIndexs(@[@(11),@(2),@(3),@(6),@(7),@(1)], 3);
-        NSLog(@"%@",result);
+//        NSArray *result = findSumIndexs(@[@(11),@(2),@(3),@(6),@(7),@(1)], 3);
+//        NSLog(@"%@",result);
+        
+//        struct Node *aHead = constructList(5);
+//        printList(aHead);
+//        reSorted(aHead);
+//        printList(aHead);
+        
+        
+//        XHSimpleNode *n = creatOCNode(5);
+//        PrintOCNodes(n);
+//        reSortedOCNodes(n);
+//        PrintOCNodes(n);
+        
+//        NSArray *result = [XHListReverse reverseWithList:@[@"1",@"2",@"3",@"4"]];
+//        NSLog(@"%@",result);
         
     }
     return 0;

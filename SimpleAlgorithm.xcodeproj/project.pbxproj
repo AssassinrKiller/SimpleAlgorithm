@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		999B04C22AB072E200E9AB02 /* XHSimpleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 999B04C12AB072E200E9AB02 /* XHSimpleNode.m */; };
+		999B04DB2AB33BD100E9AB02 /* XHListReverse.m in Sources */ = {isa = PBXBuildFile; fileRef = 999B04DA2AB33BD100E9AB02 /* XHListReverse.m */; };
 		99C040D524CA11010084C6F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C040D424CA11010084C6F0 /* main.m */; };
 		99C040E524CA111F0084C6F0 /* XHReverseList.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C040DC24CA111E0084C6F0 /* XHReverseList.m */; };
 		99C040E724CA111F0084C6F0 /* PrintTriangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C040E124CA111F0084C6F0 /* PrintTriangle.m */; };
@@ -27,6 +29,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		999B04C02AB072E200E9AB02 /* XHSimpleNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSimpleNode.h; sourceTree = "<group>"; };
+		999B04C12AB072E200E9AB02 /* XHSimpleNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSimpleNode.m; sourceTree = "<group>"; };
+		999B04D92AB33BD100E9AB02 /* XHListReverse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHListReverse.h; sourceTree = "<group>"; };
+		999B04DA2AB33BD100E9AB02 /* XHListReverse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHListReverse.m; sourceTree = "<group>"; };
 		99C040D124CA11010084C6F0 /* SimpleAlgorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SimpleAlgorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C040D424CA11010084C6F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		99C040DB24CA111E0084C6F0 /* XHReverseList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHReverseList.h; sourceTree = "<group>"; };
@@ -77,6 +83,10 @@
 				99C040E324CA111F0084C6F0 /* XHMergeSortedList.m */,
 				99C040DB24CA111E0084C6F0 /* XHReverseList.h */,
 				99C040DC24CA111E0084C6F0 /* XHReverseList.m */,
+				999B04C02AB072E200E9AB02 /* XHSimpleNode.h */,
+				999B04C12AB072E200E9AB02 /* XHSimpleNode.m */,
+				999B04D92AB33BD100E9AB02 /* XHListReverse.h */,
+				999B04DA2AB33BD100E9AB02 /* XHListReverse.m */,
 				99C040D424CA11010084C6F0 /* main.m */,
 			);
 			path = SimpleAlgorithm;
@@ -141,7 +151,9 @@
 			files = (
 				99C040E924CA111F0084C6F0 /* XHMergeSortedList.m in Sources */,
 				99C040E724CA111F0084C6F0 /* PrintTriangle.m in Sources */,
+				999B04DB2AB33BD100E9AB02 /* XHListReverse.m in Sources */,
 				99C040E524CA111F0084C6F0 /* XHReverseList.m in Sources */,
+				999B04C22AB072E200E9AB02 /* XHSimpleNode.m in Sources */,
 				99C040E824CA111F0084C6F0 /* XHHashfind.m in Sources */,
 				99C040D524CA11010084C6F0 /* main.m in Sources */,
 			);
